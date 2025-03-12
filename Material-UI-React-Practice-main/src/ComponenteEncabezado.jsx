@@ -42,7 +42,6 @@ function ComponenteEncabezado() {
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
 
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -104,14 +103,19 @@ function ComponenteEncabezado() {
             <Button component={Link} to='/recetas' onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block', fontSize: '16px'}}>
                Recetas
             </Button>
-
+            <Button component={Link} to='/about' onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block' , fontSize: '16px'}}>
+               Acerca De
+            </Button>
+            <Button component={Link} to='/contact' onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block' , fontSize: '16px'}}>
+               Conctactos
+            </Button>
 
             
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="https://avatars.githubusercontent.com/u/181114153?v=4" />
+                <Avatar alt="Remy Sharp" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fdoblaje.fandom.com%2Fes%2Fwiki%2FBotas&psig=AOvVaw0Yqe8tXx2yFtglwNem1YWN&ust=1741798272260000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKi3vKy-gowDFQAAAAAdAAAAABAE" />
               </IconButton>
             </Tooltip>
             <Menu

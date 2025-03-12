@@ -22,6 +22,20 @@ export default function AppRoutes () {
         <Routes>
             {/* Ruta para la página de inicio */}
             <Route path='/' element={<PageHome/>} />
+
+            {/* Rutas para las páginas "Acerca de" y "Contacto" */}
+            <Route path='/about' element={<PageAbout/>} />
+            <Route path='/contact' element={<PageContact/>} />
+            
+            {/* Rutas anidadas para el dashboard */}
+            <Route path="/dash">
+                {/* Ruta principal del dashboard */}
+                <Route index element={<PageDash/>}/>
+                {/* Ruta dinámica para mostrar detalles específicos en el dashboard */}
+                <Route path=':id' element={<DetallesDash/>}/>
+                {/* Ruta para la sección de trading dentro del dashboard */}
+                <Route path='trading' element={<PageTrading/>}/>
+            </Route>
             
             {/* Rutas anidadas para la sección de recetas */}
             <Route path='/recetas'>
@@ -30,7 +44,6 @@ export default function AppRoutes () {
                 {/* Ruta dinámica para mostrar el detalle de una receta */}
                 <Route path=':id' element={<DetalleComida/>}/>
             </Route>
-
 
             {/* Ruta comodín para capturar cualquier ruta no definida y mostrar la página NotFound */}
             <Route path='*' element={<NotFound/>}/>

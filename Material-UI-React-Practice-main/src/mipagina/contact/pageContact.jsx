@@ -27,7 +27,7 @@ export default function PageContact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Formulario enviado:', contact);
-    setSuccessMessage('Tu mensaje ha sido enviado con éxito!');
+    setSuccessMessage('¡Gracias por contactarnos! Te responderemos pronto.');
     setContact({
       name: '',
       surname: '',
@@ -41,9 +41,9 @@ export default function PageContact() {
   return (
     <Box className="contact-background">
       <Container maxWidth="md" className="contact-container">
-        <Typography variant="h3" className="contact-title" sx={{ color: "#ea2a04" }}>¡Ponte en contacto!</Typography>
+        <Typography variant="h3" className="contact-title">¡Conéctate con nosotros!</Typography>
         <Typography variant="body1" className="contact-description">
-          Si tienes alguna pregunta o inquietud, no dudes en enviarme un mensaje. ¡Estoy aquí para ayudarte!
+          Completa el formulario y nos pondremos en contacto contigo a la brevedad.
         </Typography>
 
         <Divider sx={{ my: 4 }} />
@@ -52,7 +52,7 @@ export default function PageContact() {
         <form onSubmit={handleSubmit}>
           <Grid container spacing={3}>
             {/* Fila 1: Nombre */}
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={6}>
               <TextField
                 label="Tu nombre"
                 name="name"
@@ -66,7 +66,7 @@ export default function PageContact() {
             </Grid>
 
             {/* Fila 2: Apellidos */}
-            <Grid item xs={12}>
+            <Grid item xs={12} sm={6}>
               <TextField
                 label="Tus apellidos"
                 name="surname"
@@ -142,7 +142,7 @@ export default function PageContact() {
 
             {/* Fila 7: Botón de Enviar */}
             <Grid item xs={12}>
-              <Button variant="contained" color="primary" type="submit" fullWidth>
+              <Button variant="contained" color="secondary" type="submit" fullWidth>
                 Enviar mensaje
               </Button>
             </Grid>
