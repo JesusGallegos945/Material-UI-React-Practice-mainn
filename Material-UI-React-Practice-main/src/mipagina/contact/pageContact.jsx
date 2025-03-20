@@ -142,7 +142,7 @@ export default function PageContact() {
 
             {/* Fila 7: Botón de Enviar */}
             <Grid item xs={12}>
-              <Button variant="contained" color="secondary" type="submit" fullWidth>
+              <Button variant="contained" type="submit" fullWidth>
                 Enviar mensaje
               </Button>
             </Grid>

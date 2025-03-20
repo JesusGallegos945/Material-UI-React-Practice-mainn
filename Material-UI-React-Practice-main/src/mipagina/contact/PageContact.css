@@ -1,27 +1,27 @@
 /* Estilo general para la página de contacto */
 .contact-background {
-  background-color: #f0f4f8; /* Fondo más suave */
+  background-color: #1a1a1a; /* Fondo oscuro pero no tan intenso como el negro puro */
   padding: 50px 0;
 }
 
 .contact-container {
   text-align: center;
-  background-color: #fff;
+  background-color: #333333; /* Un gris oscuro para el contenedor */
   padding: 40px;
   border-radius: 12px; /* Bordes más suaves */
-  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.1); /* Sombra más difusa */
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2); /* Sombra más difusa y oscura */
 }
 
 .contact-title {
   font-size: 2.8rem; /* Título más grande */
-  color: #007BFF; /* Azul brillante */
+  color: #ffffff; /* Blanco para el título */
   font-weight: bold;
   margin-bottom: 15px;
 }
 
 .contact-description {
   font-size: 1.1rem;
-  color: #555;
+  color: #cccccc; /* Gris claro para el texto descriptivo */
   margin-bottom: 30px;
 }
 
@@ -30,25 +30,35 @@
 }
 
 button {
-  background-color: #ff5722; /* Color más cálido */
+  background-color: #444444; /* Un gris más claro para el botón */
   color: white;
   font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease; /* Transición más fluida */
 }
 
 button:hover {
-  background-color: #e64a19; /* Color más oscuro */
+  background-color: #555555; /* Un gris un poco más claro al pasar el ratón */
   transform: scale(1.05); /* Efecto de ampliación al pasar el ratón */
 }
 
 .success-message {
-  color: #28a745;
+  color: #4caf50; /* Verde para el mensaje de éxito */
   margin-top: 20px;
   font-weight: bold;
 }
 
 .MuiInputBase-root {
   border-radius: 8px;
+  background-color: #444444; /* Fondo oscuro para los campos de entrada */
+  color: #ffffff; /* Texto blanco para los campos de entrada */
+}
+
+.MuiInputBase-root::placeholder {
+  color: #cccccc; /* Color del placeholder más suave */
 }
 
 @media (max-width: 991px) {
@@ -57,7 +67,7 @@ button:hover {
   }
 
   .contact-title {
-      font-size: 2.2rem; /* Tamaño reducido */
+      font-size: 2.2rem;
   }
 
   .contact-description {
@@ -67,6 +77,7 @@ button:hover {
   .contact-field {
       margin-bottom: 15px; /* Menos espaciado en pantallas pequeñas */
   }
-}
 
+  
+}
   

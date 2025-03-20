@@ -4,14 +4,13 @@
   align-items: center;
   height: 100vh; 
   width: 100vw;  
-  background-image: url('https://info.inmobilia.mx/hubfs/restaurantes-gourmet-merida.jpeg');
+  background-image: url('https://galeriasalamarte.com/cdn/shop/collections/acuarela_editada.jpg?v=1722555010');
   background-size: cover; 
   background-position: center; 
   background-attachment: fixed; 
   position: relative;
   filter: brightness(70%); 
 }
-
 
 .page-home::after {
   content: '';
@@ -21,42 +20,36 @@
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.4); 
-  z-index: -1;
+  z-index: 0;
 }
 
-
-.page-home-content {
+.page-home-text {
   text-align: center;
-  padding: 2rem 3rem;
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.15); 
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
-  border: 1px solid rgba(71, 101, 171, 0.2); 
-  max-width: 30%; 
+  z-index: 1; 
+  position: relative; 
+  max-width: 800px; 
+  padding: 0 20px; 
 }
 
-
-.page-home-content h1 {
+.page-home-text h1 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #00aaff; 
+  color: #262626; 
   letter-spacing: 2px; 
   text-transform: uppercase; 
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); 
 }
 
-
-.page-home-content p {
+.page-home-text p {
   font-size: 1.2rem;
   color: #FFF; 
   margin-bottom: 2rem;
   line-height: 1.6;
 }
 
-
-.page-home-content button {
-  background-color: #47b5ff; 
+.page-home-text button {
+  background-color: #262626; 
   color: white;
   padding: 0.75rem 2rem;
   border-radius: 50px; 
@@ -69,13 +62,13 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.page-home-content button:hover {
-  background-color: #008cff; 
+.page-home-text button:hover {
+  background-color: #262626; 
   transform: translateY(-3px); 
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); 
 }
 
-.page-home-content button:active {
+.page-home-text button:active {
   transform: translateY(1px); 
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }

@@ -4,8 +4,6 @@ import {
   Paper,
   Typography,
   CardMedia,
-  CardContent,
-  Button,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -15,99 +13,152 @@ import Grid from "@mui/material/Grid2";
 
 export default function DetalleComida() {
   let { id } = useParams();
-
-  const [meal, setMeal] = useState(null);
+  const [obra, setObra] = useState(null);
 
   useEffect(() => {
-    const fetchMealDetails = async () => {
+    const fetchObraDetails = async () => {
       try {
-        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+        const response = await fetch(
+          `https://api.artic.edu/api/v1/artworks/${id}?fields=id,title,image_id,artist_title,date_display,medium_display,description,dimensions,credit_line`
+        );
         const result = await response.json();
-        if (result.meals && result.meals.length > 0) {
-          setMeal(result.meals[0]);
+        if (result.data) {
+          setObra(result.data);
         }
       } catch (error) {
-        console.error("Error al obtener los detalles de la comida:", error);
+        console.error("Error al obtener los detalles de la obra:", error);
       }
     };
 
-    fetchMealDetails();
+    fetchObraDetails();
   }, [id]);
 
-  if (!meal) {
-    return <Typography sx={{ textAlign: "center", marginTop: 4 }}>Cargando los datos...</Typography>;
+  if (!obra) {
+    return <Typography sx={{ textAlign: "center", marginTop: 4, color: "#fff" }}>Cargando los datos...</Typography>;
   }
 
+  const imagenUrl = obra.image_id
+    ? `https://www.artic.edu/iiif/2/${obra.image_id}/full/843,/0/default.jpg`
+    : "https://via.placeholder.com/500x300?text=Imagen+no+disponible";
+
   return (
-    <div>
-      <Grid container padding={4} spacing={4} justifyContent="center">
-        <Paper sx={{ padding: 2, margin: 2, borderRadius: "10px" }}>
-          <Typography variant="h2" sx={{ textAlign: "center", marginBottom: 2, fontWeight: "bold" }}>
-            {meal.strMeal}
-          </Typography>
-          <CardMedia
-            component="img"
-            height="500"
-            image={meal.strMealThumb}
-            alt={meal.strMeal}
-            sx={{ borderRadius: "30px", margin: "0 auto", width: "50%" }}
-          />
-          <CardContent>
-            <Typography variant="body1" sx={{ marginBottom: 2, textAlign: "center", fontSize: "30px" }}>
-              <strong>Categoría:</strong> {meal.strCategory} | <strong>Origen:</strong> {meal.strArea}
+    <div style={{ backgroundColor: "#262626", minHeight: "100vh", padding: "20px" }}>
+      <Grid container spacing={2} padding={2}>
+        {/* Columna de la imagen */}
+        <Grid item xs={12} md={6}>
+          <Paper
+            sx={{
+              padding: 1,
+              borderRadius: "10px",
+              boxShadow: 3,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "#404040",
+            }}
+          >
+            <CardMedia
+              component="img"
+              height="400" // Reducir la altura de la imagen
+              image={imagenUrl}
+              alt={obra.title}
+              sx={{ borderRadius: "8px", objectFit: "cover", width: "100%" }}
+            />
+          </Paper>
+        </Grid>
+
+        {/* Columna de la descripción */}
+        <Grid item xs={12} md={6}>
+          <Paper
+            sx={{
+              padding: 2,
+              borderRadius: "10px",
+              boxShadow: 3,
+              backgroundColor: "#404040",
+            }}
+          >
+            <Typography
+              variant="h4"
+              sx={{
+                textAlign: "center",
+                marginBottom: 2,
+                fontWeight: "bold",
+                color: "#fff",
+              }}
+            >
+              {obra.title}
             </Typography>
 
-            <Typography variant="body1" sx={{ marginBottom: 2, textAlign: "center", fontSize: "30px" }}>
-              <strong>Id_Comida:</strong> {id}
+            <Typography
+              variant="body1"
+              sx={{ marginBottom: 2, textAlign: "center", fontSize: "16px", color: "#fff" }}
+            >
+              <strong>Artista:</strong> {obra.artist_title || "Desconocido"}
             </Typography>
 
-            <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography component="span" sx={{ fontSize: "30px" }}>
-                  <strong>Ingredientes</strong>
+            <Typography
+              variant="body1"
+              sx={{ marginBottom: 2, textAlign: "center", fontSize: "16px", color: "#fff" }}
+            >
+              <strong>Fecha:</strong> {obra.date_display || "Desconocida"}
+            </Typography>
+
+            <Typography
+              variant="body1"
+              sx={{ marginBottom: 2, textAlign: "center", fontSize: "16px", color: "#fff" }}
+            >
+              <strong>Medio:</strong> {obra.medium_display || "No especificado"}
+            </Typography>
+
+            <Accordion sx={{ marginBottom: 2, backgroundColor: "#333" }}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}>
+                <Typography variant="h6" sx={{ fontWeight: "bold", color: "#fff" }}>
+                  Descripción
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <ul style={{ paddingLeft: "20px", fontSize: "20px" }}>
-                  {Array.from({ length: 20 }).map((_, i) => {
-                    const ingrediente = meal[`strIngredient${i + 1}`];
-                    const medida = meal[`strMeasure${i + 1}`];
-                    return ingrediente ? (
-                      <li key={i}>
-                        {medida} {ingrediente}
-                      </li>
-                    ) : null;
-                  })}
-                </ul>
+                <Typography
+                  variant="body2"
+                  sx={{ textAlign: "justify", whiteSpace: "pre-line", fontSize: "14px", color: "#fff" }}
+                >
+                  {obra.description || "No hay descripción disponible."}
+                </Typography>
               </AccordionDetails>
             </Accordion>
 
-            <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography component="span"  sx={{ fontSize: "30px" }} >
-                  <strong>Instrucciones</strong>
+            <Accordion sx={{ marginBottom: 2, backgroundColor: "#333" }}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}>
+                <Typography variant="h6" sx={{ fontWeight: "bold", color: "#fff" }}>
+                  Dimensiones
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography variant="body2" sx={{ textAlign: "justify", whiteSpace: "pre-line", fontSize: "20px" }}>
-                  {meal.strInstructions}
+                <Typography
+                  variant="body2"
+                  sx={{ textAlign: "justify", whiteSpace: "pre-line", fontSize: "14px", color: "#fff" }}
+                >
+                  {obra.dimensions || "No hay información sobre dimensiones."}
                 </Typography>
               </AccordionDetails>
             </Accordion>
 
-            {meal.strYoutube && (
-              <Button
-                variant="contained"
-                color="secondary"
-                href={meal.strYoutube}
-                target="_blank"
-                sx={{ marginTop: "20px", width: "100%", fontSize: "20px" }}
-              >
-                 Ver Receta en YouTube
-              </Button>
-            )}
-          </CardContent>
-        </Paper>
+            <Accordion sx={{ marginBottom: 2, backgroundColor: "#333" }}>
+              <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}>
+                <Typography variant="h6" sx={{ fontWeight: "bold", color: "#fff" }}>
+                  Línea de crédito
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography
+                  variant="body2"
+                  sx={{ textAlign: "justify", whiteSpace: "pre-line", fontSize: "14px", color: "#fff" }}
+                >
+                  {obra.credit_line || "No hay información sobre la línea de crédito."}
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          </Paper>
+        </Grid>
       </Grid>
     </div>
   );

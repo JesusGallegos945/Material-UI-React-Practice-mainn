@@ -5,12 +5,10 @@ import '../home/style.css';
 const PageHome = () => {
   return (
     <div className="page-home">
-      <div className="page-home-content">
-        <h1>Welcome a Recetas Mundiales</h1>
-        <p>Aqui puedes buscar y encontrar lo mejor</p>
-        <p>Lo mejor de cada País</p>
+      <div className="page-home-text">
+        <h1>Bienvenido a Art Gallery</h1>
         <Link to="/recetas">
-          <button>Conoce más</button>
+          <button>Explorar Obras</button>
         </Link>
       </div>
     </div>

@@ -37,7 +37,7 @@ function ComponenteEncabezado() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: 'black' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#262626' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />

@@ -9,7 +9,7 @@ export default function PageAbout() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        background: "linear-gradient(135deg, #1a237e 30%, #0d47a1 90%)",
+        background: "#000000",
         color: "white",
         p: 3,
       }}
@@ -21,7 +21,7 @@ export default function PageAbout() {
           p: 4,
           borderRadius: 4,
           textAlign: "center",
-          background: "rgba(255, 255, 255, 0.1)",
+          background: "rgba(38, 38, 38, 0.9)",
           backdropFilter: "blur(10px)",
         }}
       >
@@ -50,4 +50,5 @@ export default function PageAbout() {
     </Box>
   );
 }
+
 
