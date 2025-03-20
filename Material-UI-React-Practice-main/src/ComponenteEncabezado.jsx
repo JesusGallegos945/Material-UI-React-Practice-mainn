@@ -101,7 +101,7 @@ function ComponenteEncabezado() {
                Inicio
             </Button>
             <Button component={Link} to='/recetas' onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block', fontSize: '16px'}}>
-               Recetas
+               Obras
             </Button>
             <Button component={Link} to='/about' onClick={handleCloseNavMenu} sx={{my: 2, color: 'white', display: 'block' , fontSize: '16px'}}>
                Acerca De

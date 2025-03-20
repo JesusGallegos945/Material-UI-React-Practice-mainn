@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Paper, InputBase, IconButton, Card, Typography, Container, Button } from "@mui/material";
-import Grid from "@mui/material/Grid2";
+import Grid from "@mui/material/Grid";
 import SearchIcon from "@mui/icons-material/Search";
 import ContenidoComida from "./ContenidoComida";
 
@@ -68,14 +68,14 @@ export default function HomePage() {
     <div style={{ backgroundColor: "#1F1F1F", minHeight: "100vh", padding: 0, margin: 0 }}>
       <Container sx={{ padding: 2, backgroundColor: "#1F1F1F", color: "#fff", maxWidth: "100%", margin: 0 }}>
         {/* Barra de búsqueda */}
-        <Grid container justifyContent="center" alignItems="center" spacing={2} sx={{ marginBottom: 4 }}>
+        <Grid container justifyContent="center" alignItems="center" spacing={2} sx={{ marginBottom: 4, padding: 0 }}>
           <Grid item xs={12} md={8} lg={6}>
             <Card
               sx={{
                 padding: 0,
                 borderRadius: "40px",
                 boxShadow: "none",
-                backgroundColor: "#262626", 
+                backgroundColor: "#262626",
               }}
             >
               <Paper
@@ -88,7 +88,7 @@ export default function HomePage() {
                   borderRadius: "30px",
                   boxShadow: 3,
                   width: "100%",
-                  backgroundColor: "#262626", 
+                  backgroundColor: "#262626",
                 }}
               >
                 <InputBase
@@ -111,7 +111,7 @@ export default function HomePage() {
         </Grid>
 
         {/* Contenedor de las tarjetas */}
-        <Grid container spacing={1} padding={1}> 
+        <Grid container spacing={2} sx={{ padding: 0, margin: 0 }}>
           {obrasConImagenes.length > 0 ? (
             obrasConImagenes.map((obra, index) => (
               <Grid key={index} item xs={12} sm={6} md={4} lg={3}>
