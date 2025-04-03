@@ -1,6 +1,6 @@
 import React from 'react';
-import { ContenedorAprobado } from './Alumnospro/ContenedorAprobado';
-import { ContenedorReprobado } from './Alumnospro/ContenedorReprobado';
+import { ContenedorAprobado } from './Alumnospro/contenedoraprobado';
+import { ContenedorReprobado } from './Alumnospro/contenedoreprobado';
 
 export const AlumnoPromedio = () => {
     const material1 = 9;

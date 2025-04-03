@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Paper, InputBase, IconButton, Card, Typography, Container, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import SearchIcon from "@mui/icons-material/Search";
-import ContenidoComida from "./ContenidoComida";
+import ContenidoComida from "./contenidocomida";
 
 export default function HomePage() {
   const [textoBuscar, setTextoBuscar] = useState("");
@@ -136,7 +136,7 @@ export default function HomePage() {
                 variant="h5"
                 sx={{
                   textAlign: "center",
-                  color: "text.secondary",
+                  color: "white",
                   marginTop: 4,
                 }}
               >

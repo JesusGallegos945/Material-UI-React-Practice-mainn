@@ -9,10 +9,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function ContenidoComida({ data }) {
-  const obra = data[0]; // Acceder al primer elemento del array
+  const obra = data[0]; 
 
   if (!obra || !obra.image_id) {
-    return null; // Si no hay datos o no hay imagen, no renderizar nada
+    return null; 
   }
 
   const imagenUrl = `https://www.artic.edu/iiif/2/${obra.image_id}/full/843,/0/default.jpg`;
@@ -29,7 +29,7 @@ export default function ContenidoComida({ data }) {
     >
       <CardMedia
         component="img"
-        height="200" // Reducir la altura de la imagen
+        height="200" 
         image={imagenUrl}
         alt={obra.title}
         sx={{ borderRadius: "8px", objectFit: "cover", width: "100%" }}

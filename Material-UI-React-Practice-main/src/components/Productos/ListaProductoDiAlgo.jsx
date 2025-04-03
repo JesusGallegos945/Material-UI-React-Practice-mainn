@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid2';
 
 import React from 'react'
 import { Typography , Card } from '@mui/material';
-import MiDialogo from './Midialogo';
+import MiDialogo from './midialogo';
 
 export default function ListaProductoDialogo (props) {
 const data = props.data

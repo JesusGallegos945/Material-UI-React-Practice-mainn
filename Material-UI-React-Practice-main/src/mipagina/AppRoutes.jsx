@@ -1,20 +1,20 @@
 import { Route, Routes } from 'react-router-dom'
 
 // Importación de componentes para cada una de las páginas de la aplicación
-import PageHome from './home/pageHome'
+import PageHome from './home/pagehome'
 import PageContact from './contact/pageContact'
-import PageAbout from './about/pageAbout'
+import PageAbout from './about/pageabout'
 import HomePage from '../pages/HomePage'
-import NotFound from './NotFound'
-import PageDash from './dash/PageDash'
-import PageTrading from './dash/PageTrading'
-import DetallesDash from './dash/DetallesDash'
+import NotFound from './notfound'
+import PageDash from './dash/pagedash'
+import PageTrading from './dash/pagetrading'
+import DetallesDash from './dash/detallesdash'
 import DetalleComida from '../pages/DetalleComida'
-import { AlumnoPromedio } from '../components/AlumnoPromedio'
-import { ContenedorAprobado } from '../components/Alumnospro/ContenedorAprobado'
-import { ContenedorReprobado } from '../components/Alumnospro/ContenedorReprobado'
-import MainTienda from '../components/Tienda/MainTienda/MainTienda'
-import Objectos_Tienda from '../components/Tienda/Objectos_Tienda/Objectos_Tienda'
+import { AlumnoPromedio } from '../components/alumnopromedio'
+import { ContenedorAprobado } from '../components/Alumnospro/contenedoraprobado'
+import { ContenedorReprobado } from '../components/Alumnospro/contenedoreprobado'
+import MainTienda from '../components/Tienda/MainTienda/maintienda'
+import Objectos_Tienda from '../components/Tienda/Objectos_Tienda/objectos_tienda'
 
 export default function AppRoutes () {
     return (

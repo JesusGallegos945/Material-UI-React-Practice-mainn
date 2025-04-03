@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Objectos_Tienda from "../Objectos_Tienda/Objectos_Tienda";
+import Objectos_Tienda from "../Objectos_Tienda/objectos_tienda";
 import {Box, FormControl, Select, MenuItem, Button, TextField, Divider, Checkbox, FormControlLabel} from "@mui/material";
 
 import './MainTienda.css';
